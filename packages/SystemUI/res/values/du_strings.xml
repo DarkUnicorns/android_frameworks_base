@@ -118,4 +118,8 @@
     <string name="navigation_bar_height_tablets_landscape_title">Height (landscape)</string>
     <string name="navigation_bar_width_title">Width</string>
 
+    <!-- Smart pixels QS tile -->
+    <string name="quick_settings_smart_pixels">Smart pixels</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Auto-enabled smart pixels</string>
+
 </resources>
