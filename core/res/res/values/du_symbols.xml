@@ -162,4 +162,8 @@
   <!-- Whether device has dash charging support -->
   <java-symbol type="bool" name="config_hasDashCharger" />
 
+  <!-- OP like gestures -->
+  <java-symbol type="dimen" name="nav_gesture_swipe_min_length" />
+  <java-symbol type="dimen" name="nav_gesture_long_press_max_length" />
+
 </resources>

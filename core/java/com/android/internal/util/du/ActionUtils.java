@@ -25,6 +25,7 @@ import android.content.pm.PackageManager;
 import android.hardware.input.InputManager;
 import android.media.AudioManager;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -160,6 +161,11 @@ public class ActionUtils {
                         InputManager.INJECT_INPUT_EVENT_MODE_ASYNC);
             }
         }, 20);
+    }
+
+    public static void sendKeycode(int keycode) {
+        final Handler handler = new Handler(Looper.getMainLooper());
+        sendKeycode(keycode, handler);
     }
 
     // Method to move keyboard cursor

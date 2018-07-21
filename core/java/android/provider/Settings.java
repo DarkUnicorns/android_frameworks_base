@@ -4699,6 +4699,22 @@ public final class Settings {
         public static final String SWAP_NAVIGATION_KEYS = "swap_navigation_keys";
 
         /**
+         * @hide
+         */
+        public static final String USE_BOTTOM_GESTURE_NAVIGATION =
+                "use_bottom_gesture_navigation";
+
+        /** @hide */
+        private static final Validator USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * Whether to show or hide the edit icon
+         * @hide
+         */
+        public static final String QS_EDIT_TOGGLE = "qs_edit_toggle";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -4763,7 +4779,8 @@ public final class Settings {
             BUTTON_BACKLIGHT_ENABLE,
             BUTTON_BACKLIGHT_TIMEOUT,
             BUTTON_BACKLIGHT_ON_TOUCH_ONLY,
-            NOTIFICATION_LIGHT_PULSE
+            NOTIFICATION_LIGHT_PULSE,
+            USE_BOTTOM_GESTURE_NAVIGATION
         };
 
         /**
@@ -4899,6 +4916,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ENABLE);
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_TIMEOUT);
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
+            PRIVATE_SETTINGS.add(USE_BOTTOM_GESTURE_NAVIGATION);
         }
 
         /**
@@ -5001,6 +5019,8 @@ public final class Settings {
             VALIDATORS.put(BUTTON_BACKLIGHT_ON_TOUCH_ONLY,
                     BUTTON_BACKLIGHT_ON_TOUCH_ONLY_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
+            VALIDATORS.put(USE_BOTTOM_GESTURE_NAVIGATION,
+                    USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR);
         }
 
         /**
