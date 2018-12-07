@@ -4708,6 +4708,24 @@ public final class Settings {
         private static final Validator USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
+	/*
+         * @hide
+         */
+        public static final String BOTTOM_GESTURE_TRIGGER_TIMEOUT =
+                "bottom_gesture_navigation_trigger_timeout";
+
+        private static final Validator BOTTOM_GESTURE_TRIGGER_TIMEOUT_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
+        /**
+         * @hide
+         */
+        public static final String BOTTOM_GESTURE_SWIPE_LIMIT =
+                "bottom_gesture_navigation_swipe_limit";
+
+        private static final Validator BOTTOM_GESTURE_SWIPE_LIMIT_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
         /**
          * Whether to show or hide the edit icon
          * @hide
@@ -4780,7 +4798,9 @@ public final class Settings {
             BUTTON_BACKLIGHT_TIMEOUT,
             BUTTON_BACKLIGHT_ON_TOUCH_ONLY,
             NOTIFICATION_LIGHT_PULSE,
-            USE_BOTTOM_GESTURE_NAVIGATION
+            USE_BOTTOM_GESTURE_NAVIGATION,
+            BOTTOM_GESTURE_TRIGGER_TIMEOUT,
+            BOTTOM_GESTURE_SWIPE_LIMIT
         };
 
         /**
@@ -4917,6 +4937,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_TIMEOUT);
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
             PRIVATE_SETTINGS.add(USE_BOTTOM_GESTURE_NAVIGATION);
+            PRIVATE_SETTINGS.add(BOTTOM_GESTURE_TRIGGER_TIMEOUT);
+            PRIVATE_SETTINGS.add(BOTTOM_GESTURE_SWIPE_LIMIT);
         }
 
         /**
@@ -5021,6 +5043,10 @@ public final class Settings {
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
             VALIDATORS.put(USE_BOTTOM_GESTURE_NAVIGATION,
                     USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR);
+            VALIDATORS.put(BOTTOM_GESTURE_TRIGGER_TIMEOUT,
+                    BOTTOM_GESTURE_TRIGGER_TIMEOUT_VALIDATOR);
+            VALIDATORS.put(BOTTOM_GESTURE_SWIPE_LIMIT,
+                    BOTTOM_GESTURE_SWIPE_LIMIT_VALIDATOR);
         }
 
         /**

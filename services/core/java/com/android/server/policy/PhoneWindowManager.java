@@ -1218,6 +1218,12 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.USE_BOTTOM_GESTURE_NAVIGATION), false, this,
                     UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.BOTTOM_GESTURE_TRIGGER_TIMEOUT), false, this,
+                    UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.BOTTOM_GESTURE_SWIPE_LIMIT), false, this,
+                    UserHandle.USER_ALL);
             updateSettings();
         }
 
@@ -3020,6 +3026,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         if (mGestureButtonRegistered && !mUseGestureButton) {
             mWindowManagerFuncs.unregisterPointerEventListener(mGestureButton);
             mGestureButtonRegistered = false;
+        }
+        if(mUseGestureButton && mGestureButton != null) {
+            mGestureButton.updateSettings();
         }
     }
 
